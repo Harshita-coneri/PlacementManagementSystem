@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>test123</internal_name>
+        <label_cache>null</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>test123</name>
+        <outputs/>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-11 05:06:43</sys_created_on>
+        <sys_id>95f57b3ddbb77700492ff7af299619b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>test123</sys_name>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>sys_hub_flow_95f57b3ddbb77700492ff7af299619b9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-11 05:06:43</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=95f57b3ddbb77700492ff7af299619b9"/>
+    <sys_variable_value action="delete_multiple" query="document_key=95f57b3ddbb77700492ff7af299619b9"/>
+</record_update>

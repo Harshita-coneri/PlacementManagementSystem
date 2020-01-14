@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE">
+        <sp_angular_provider display_value="spAttachmentManager">06e836f0d722120023c84f80de6103a1</sp_angular_provider>
+        <sp_widget display_value="myform">db870486db2b3300492ff7af299619f0</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>cse</sys_created_by>
+        <sys_created_on>2019-08-29 20:07:54</sys_created_on>
+        <sys_id>df870486db2b3300492ff7af299619f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spAttachmentManager.myform</sys_name>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_df870486db2b3300492ff7af299619f2</sys_update_name>
+        <sys_updated_by>cse</sys_updated_by>
+        <sys_updated_on>2019-08-29 20:07:54</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+</record_update>

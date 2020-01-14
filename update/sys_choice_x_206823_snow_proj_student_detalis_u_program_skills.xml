@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="u_program_skills" table="x_206823_snow_proj_student_detalis" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_program_skills</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>C language</label>
+            <language>en</language>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 17:46:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d517a73ddba73300492ff7af299619d3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 17:46:03</sys_updated_on>
+            <value>c language</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_program_skills</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>C</label>
+            <language>en</language>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 17:46:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1917a73ddba73300492ff7af299619d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 17:46:03</sys_updated_on>
+            <value>c</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_program_skills</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>JAVA</label>
+            <language>en</language>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <sequence>2</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 17:46:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9517a73ddba73300492ff7af299619d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 17:46:03</sys_updated_on>
+            <value>java</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_program_skills</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PYTHON</label>
+            <language>en</language>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <sequence>3</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 17:46:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1517a73ddba73300492ff7af299619d6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 17:46:03</sys_updated_on>
+            <value>python</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_program_skills</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>R</label>
+            <language>en</language>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <sequence>4</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 17:46:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9117a73ddba73300492ff7af299619d7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 17:46:03</sys_updated_on>
+            <value>r</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_program_skills</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>HTML</label>
+            <language>en</language>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <sequence>5</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 17:46:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1117a73ddba73300492ff7af299619d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 17:46:03</sys_updated_on>
+            <value>html</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_program_skills</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PHP</label>
+            <language>en</language>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <sequence>6</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 17:46:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9d17a73ddba73300492ff7af299619d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 17:46:03</sys_updated_on>
+            <value>php</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_program_skills</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>OTHER</label>
+            <language>en</language>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <sequence>7</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 17:46:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1d17a73ddba73300492ff7af299619d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 17:46:03</sys_updated_on>
+            <value>other</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>u_program_skills</element>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 17:46:03</sys_created_on>
+            <sys_id>1117a73ddba73300492ff7af299619d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_program_skills</sys_name>
+            <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+            <sys_update_name>sys_choice_x_206823_snow_proj_student_detalis_u_program_skills</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 17:46:03</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

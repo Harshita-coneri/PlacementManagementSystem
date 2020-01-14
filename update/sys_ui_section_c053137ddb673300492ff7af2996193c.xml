@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Internships" section_id="c053137ddb673300492ff7af2996193c" sys_domain="global" table="x_206823_snow_proj_student_detalis" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_no_interns</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>d553bf75dbe73300492ff7af29961924</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_1_tittle</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>5153bf75dbe73300492ff7af29961925</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_1_description</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>d553bf75dbe73300492ff7af29961925</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_1_com_name</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>5d53bf75dbe73300492ff7af29961925</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_1_com_address</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>d153bf75dbe73300492ff7af29961926</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_2_tittle</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>5953bf75dbe73300492ff7af29961926</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_2_description</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>dd53bf75dbe73300492ff7af29961926</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_2_com_name</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>5553bf75dbe73300492ff7af29961927</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_2_com_address</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>d953bf75dbe73300492ff7af29961927</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_3_tittle</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>5153bf75dbe73300492ff7af29961928</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_3_description</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>d553bf75dbe73300492ff7af29961928</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_3_com_name</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>5d53bf75dbe73300492ff7af29961928</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_intern_3_com_address</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 18:39:34</sys_created_on>
+            <sys_id>d153bf75dbe73300492ff7af29961929</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 18:39:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Internships</caption>
+            <header>false</header>
+            <name>x_206823_snow_proj_student_detalis</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:19:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c053137ddb673300492ff7af2996193c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Internships</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+            <sys_update_name>sys_ui_section_c053137ddb673300492ff7af2996193c</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:19:40</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

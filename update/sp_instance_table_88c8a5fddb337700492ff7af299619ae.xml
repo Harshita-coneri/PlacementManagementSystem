@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>success</color>
+        <css/>
+        <display_field/>
+        <field_list>u_role_for_hiring,u_date_written,u_date_tr_hr,u_number_of_openings,u_salary_annum</field_list>
+        <filter table="x_206823_snow_proj_company_requirement">sys_created_by=javascript:gs.getUserName()^status=accepted<item endquery="false" field="sys_created_by" goto="false" newquery="false" operator="=" or="false" value="javascript:gs.getUserName()"/>
+            <item endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="accepted"/>
+        </filter>
+        <glyph>check</glyph>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>2</order>
+        <order_by>sys_created_on</order_by>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">3f6411b9dbff3700492ff7af29961974</sp_column>
+        <sp_page/>
+        <sp_widget display_value="mytable">f4443f35dbe73300492ff7af299619c6</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-10 18:49:47</sys_created_on>
+        <sys_id>88c8a5fddb337700492ff7af299619ae</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>MY APPROVED DRIVES</sys_name>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>sp_instance_table_88c8a5fddb337700492ff7af299619ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-10 19:07:38</sys_updated_on>
+        <table>x_206823_snow_proj_company_requirement</table>
+        <title>MY APPROVED DRIVES</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="delete_multiple" query="documentkey=88c8a5fddb337700492ff7af299619ae"/>
+</record_update>

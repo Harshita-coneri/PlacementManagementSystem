@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Company Requirement" max_length="40" name="x_206823_snow_proj_company_requirement" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="3" default="pending" label="staus" max_length="40" name="status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="accepted" sequence="0" value="accepted"/>
+                <element inactive_on_update="false" label="rejected" sequence="1" value="rejected"/>
+                <element inactive_on_update="false" label="pending" sequence="2" value="pending"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Certificates/documents to be verified" max_length="40" name="u_certificate_required" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Company Email" max_length="40" name="u_com_email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Company Location" max_length="40" name="u_com_location" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Company Name" max_length="40" name="u_com_name" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Company Contact Number" max_length="40" name="u_com_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Company Website" max_length="1024" name="u_com_website" type="url"/>
+        <element attributes="edge_encryption_enabled=true" label="Date of TR&amp;HR Interviews" max_length="40" name="u_date_tr_hr" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Date of written test" max_length="40" name="u_date_written" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Departments required" max_length="40" name="u_dept_require" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="HR Email" max_length="40" name="u_hr_email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="HR Name" max_length="40" name="u_hr_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="HR Contact Number" max_length="40" name="u_hr_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship period" max_length="40" name="u_intern_period" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Job Description" max_length="40" name="u_job_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Job Location" max_length="40" name="u_job_location" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="minimum 10th cgpa  for eligibility" max_length="40" name="u_min_10_cgpa" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="minimum B.tech cgpa  for eligibility" max_length="40" name="u_min_btech" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="minimum inter cgpa  for eligibility" max_length="40" name="u_min_inter" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Number of openings" max_length="40" name="u_number_of_openings" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Reporting date of job/placement" max_length="40" name="u_report_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Role for hiring" max_length="40" name="u_role_for_hiring" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Salary package per annum" max_length="40" name="u_salary_annum" type="string"/>
+        <element attributes="omit_sys_original=true,serializer=com.glide.script.PriceXMLSerializer" label="Stipend during internship" max_length="20" name="u_stipend_intern" type="price"/>
+        <element attributes="edge_encryption_enabled=true" label="Require" max_length="40" name="u_string_9" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Type of Job offer" max_length="40" name="u_type_of_job_offer" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Intern placement" sequence="0" value="intern placement"/>
+                <element inactive_on_update="false" label="Internship" sequence="1" value="internship"/>
+                <element inactive_on_update="false" label="placement" sequence="2" value="placement"/>
+            </choice>
+        </element>
+    </element>
+</database>

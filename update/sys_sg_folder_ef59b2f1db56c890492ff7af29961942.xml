@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_folder">
+    <sys_sg_folder action="INSERT_OR_UPDATE">
+        <application display_value="test">6359b2f1db56c890492ff7af29961942</application>
+        <name/>
+        <order>1</order>
+        <sys_class_name>sys_sg_folder</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-01-13 07:19:00</sys_created_on>
+        <sys_id>ef59b2f1db56c890492ff7af29961942</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>sys_sg_folder_ef59b2f1db56c890492ff7af29961942</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-01-13 07:19:00</sys_updated_on>
+    </sys_sg_folder>
+</record_update>

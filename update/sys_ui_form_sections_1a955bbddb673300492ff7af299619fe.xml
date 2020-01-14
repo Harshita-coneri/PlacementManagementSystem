@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="1a955bbddb673300492ff7af299619fe" sys_domain="global" table="x_206823_snow_proj_company_requirement" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:29:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>56959bbddb673300492ff7af29961901</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_206823_snow_proj_company_requirement" name="x_206823_snow_proj_company_requirement" sys_domain="global" view="Default view">1a955bbddb673300492ff7af299619fe</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_206823_snow_proj_company_requirement" sys_domain="global" view="Default view">7cb3177ddb673300492ff7af2996191f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:29:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:29:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>12959bbddb673300492ff7af29961902</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_206823_snow_proj_company_requirement" name="x_206823_snow_proj_company_requirement" sys_domain="global" view="Default view">1a955bbddb673300492ff7af299619fe</sys_ui_form>
+            <sys_ui_section caption="HR DETAILS" display_value="HR DETAILS" name="x_206823_snow_proj_company_requirement" sys_domain="global" view="Default view">16955bbddb673300492ff7af299619fd</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:29:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:29:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>16959bbddb673300492ff7af29961905</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_206823_snow_proj_company_requirement" name="x_206823_snow_proj_company_requirement" sys_domain="global" view="Default view">1a955bbddb673300492ff7af299619fe</sys_ui_form>
+            <sys_ui_section caption="REQIREMENTS" display_value="REQIREMENTS" name="x_206823_snow_proj_company_requirement" sys_domain="global" view="Default view">1e955bbddb673300492ff7af299619fd</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:29:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_206823_snow_proj_company_requirement</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:29:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1a955bbddb673300492ff7af299619fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_206823_snow_proj_company_requirement</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+            <sys_update_name>sys_ui_form_sections_1a955bbddb673300492ff7af299619fe</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:29:40</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

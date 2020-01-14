@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <css_variables/>
+        <default>false</default>
+        <homepage display_value="companyhomepage">41735179dbff3700492ff7af299619f4</homepage>
+        <icon/>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page display_value="companylogin">cde8cd39dbbf3700492ff7af299619c3</login_page>
+        <logo/>
+        <notfound_page/>
+        <quick_start_config/>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sqanda_knowledge_base/>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-10 17:40:47</sys_created_on>
+        <sys_id>64e8157ddbff3700492ff7af29961911</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>COMPANY</sys_name>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>sp_portal_64e8157ddbff3700492ff7af29961911</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-10 17:40:47</sys_updated_on>
+        <theme/>
+        <title>COMPANY</title>
+        <url_suffix>company</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=64e8157ddbff3700492ff7af29961911"/>
+</record_update>

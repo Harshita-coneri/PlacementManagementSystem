@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity">
+    <oauth_entity action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <access_token_lifespan>1800</access_token_lifespan>
+        <active>true</active>
+        <auth_code_lifespan>0</auth_code_lifespan>
+        <auth_url>https://accounts.google.com/o/oauth2/v2/auth</auth_url>
+        <certificate_url/>
+        <client_id>1023657046524-pcnqsqfqngj92hdp76fo26813021qibn.apps.googleusercontent.com</client_id>
+        <client_secret>RgfNRq/GLuQYgBGn40A/i/7BoUiAxTa2ezGkmvhMoxg=</client_secret>
+        <client_uuid>05ddcbe8db9d4010492ff7af299619aa</client_uuid>
+        <code_challenge_method>S256</code_challenge_method>
+        <comments/>
+        <default_grant_type>authorization_code</default_grant_type>
+        <id_token_lifespan>0</id_token_lifespan>
+        <logo_url/>
+        <message_signature_lifespan>0</message_signature_lifespan>
+        <name>Google Client</name>
+        <oauth_api_script/>
+        <protocol_name/>
+        <public_client>false</public_client>
+        <redirect_url>https://dev76383.service-now.com/oauth_redirect.do</redirect_url>
+        <refresh_token_lifespan>8640000</refresh_token_lifespan>
+        <revoke_token_url/>
+        <salt>0</salt>
+        <skip_authorize>false</skip_authorize>
+        <sys_class_name>oauth_entity</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-20 18:37:08</sys_created_on>
+        <sys_id>99ddcbe8db9d4010492ff7af299619db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Google Client</sys_name>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>oauth_entity_99ddcbe8db9d4010492ff7af299619db</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-20 18:37:08</sys_updated_on>
+        <token_url>https://oauth2.googleapis.com/token</token_url>
+        <type>oauth_provider</type>
+        <use_mutual_auth>false</use_mutual_auth>
+        <user/>
+    </oauth_entity>
+</record_update>

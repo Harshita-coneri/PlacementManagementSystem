@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Student Detalis" max_length="40" name="x_206823_snow_proj_student_detalis" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="10th Board of Education" max_length="40" name="u_10_board" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="10th percentage" max_length="40" name="u_10_percent" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="10th Standard School Name" max_length="40" name="u_10_school_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="10th Standard Year of Passing" max_length="40" name="u_10_year_of_passing" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="12th Board of Education" max_length="40" name="u_12_board" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="12th Standard College Name" max_length="40" name="u_12_college_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="12th percentage" max_length="40" name="u_12_percent" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="12th Standard Year of Passing" max_length="40" name="u_12_year_of_passing" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Certificate 1" max_length="40" name="u_certificate_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="certificate 2" max_length="40" name="u_certificate_2" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="certificate 3" max_length="40" name="u_certificate_3" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="certificate 4" max_length="40" name="u_certificate_4" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="certificate 5" max_length="40" name="u_certificate_5" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="certificate 6" max_length="40" name="u_certificate_6" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Present CGPA" max_length="40" name="u_cgpa" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="C language" max_length="40" name="u_c_language" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Familiar" sequence="0" value="familiar"/>
+                <element inactive_on_update="false" label="Good" sequence="1" value="good"/>
+                <element inactive_on_update="false" label="Beginner" sequence="2" value="beginner"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Degree" max_length="40" name="u_degree" type="string">
+            <choice>
+                <element inactive_on_update="false" label="B.Tech" sequence="0" value="b.tech"/>
+                <element inactive_on_update="false" label="M.Tech" sequence="1" value="m.tech"/>
+                <element inactive_on_update="false" label="other" sequence="2" value="other"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Department" max_length="40" name="u_department" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Date of Birth" max_length="40" name="u_dob" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Educational Instution" max_length="40" name="u_education" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Email" max_length="40" name="u_email" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Father's Phone Number" max_length="40" name="u_fathers_phone_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Father's Name" max_length="40" name="u_father_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="First Name" max_length="40" name="u_first_name" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="GitHub" max_length="1024" name="u_github" type="url"/>
+        <element attributes="edge_encryption_enabled=true" label="Id number" max_length="40" name="u_id_number" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 1 Done Company Address" max_length="40" name="u_intern_1_com_address" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 1 Done at Company name" max_length="40" name="u_intern_1_com_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 1 Description" max_length="40" name="u_intern_1_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 1 Tittle" max_length="40" name="u_intern_1_tittle" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 2 Done Company Address" max_length="40" name="u_intern_2_com_address" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 2 Done at Company name" max_length="40" name="u_intern_2_com_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 2 Description" max_length="40" name="u_intern_2_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 2 Tittle" max_length="40" name="u_intern_2_tittle" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 3 Done Company Address" max_length="40" name="u_intern_3_com_address" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 3 Done at Company name" max_length="40" name="u_intern_3_com_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 3 Description" max_length="40" name="u_intern_3_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Internship 3 Tittle" max_length="40" name="u_intern_3_tittle" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Last Name" max_length="40" name="u_last_name" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="LinkendIn" max_length="1024" name="u_linkendin" type="url"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Number of certification done" mandatory="true" max_length="40" name="u_no_certificate" type="string">
+            <choice>
+                <element inactive_on_update="false" label="0" sequence="0" value="0"/>
+                <element inactive_on_update="false" label="1" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="2" sequence="2" value="2"/>
+                <element inactive_on_update="false" label="3" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="4" sequence="4" value="4"/>
+                <element inactive_on_update="false" label="5" sequence="5" value="5"/>
+                <element inactive_on_update="false" label="6" sequence="6" value="6"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Number of Internships Done" mandatory="true" max_length="40" name="u_no_interns" type="string">
+            <choice>
+                <element inactive_on_update="false" label="0" sequence="0" value="0"/>
+                <element inactive_on_update="false" label="1" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="2" sequence="2" value="2"/>
+                <element inactive_on_update="false" label="3" sequence="3" value="3"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Number of Projects Done" mandatory="true" max_length="40" name="u_no_projects" type="string">
+            <choice>
+                <element inactive_on_update="false" label="0" sequence="0" value="0"/>
+                <element inactive_on_update="false" label="1" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="2" sequence="2" value="2"/>
+                <element inactive_on_update="false" label="3" sequence="3" value="3"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Other program skills" max_length="40" name="u_other_program_skills" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Programming Skills" max_length="40" name="u_program_skills" type="string">
+            <choice>
+                <element inactive_on_update="false" label="C language" sequence="0" value="c language"/>
+                <element inactive_on_update="false" label="C" sequence="1" value="c"/>
+                <element inactive_on_update="false" label="JAVA" sequence="2" value="java"/>
+                <element inactive_on_update="false" label="PYTHON" sequence="3" value="python"/>
+                <element inactive_on_update="false" label="R" sequence="4" value="r"/>
+                <element inactive_on_update="false" label="HTML" sequence="5" value="html"/>
+                <element inactive_on_update="false" label="PHP" sequence="6" value="php"/>
+                <element inactive_on_update="false" label="OTHER" sequence="7" value="other"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Project 1 Description" max_length="40" name="u_project_1_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Project 1 Tittle" max_length="40" name="u_project_1_tittle" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Project 2 Description" max_length="40" name="u_project_2_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Project 2 Tittle" max_length="40" name="u_project_2_tittle" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Project 3 Description" max_length="40" name="u_project_3_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Project 3 Tittle" max_length="40" name="u_project_3_tittle" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Specialization" max_length="40" name="u_specilaization" type="string">
+            <choice>
+                <element inactive_on_update="false" label="ServiceNow" sequence="0" value="servicenow"/>
+                <element inactive_on_update="false" label="Pega" sequence="1" value="pega"/>
+                <element inactive_on_update="false" label="Salesforce" sequence="2" value="salesforce"/>
+                <element inactive_on_update="false" label="Automation" sequence="3" value="automation"/>
+                <element inactive_on_update="false" label="UiPath" sequence="4" value="uipath"/>
+                <element inactive_on_update="false" label="Wipro Talent test" sequence="5" value="wipro talent test"/>
+                <element inactive_on_update="false" label="Campus Recuriment Training" sequence="6" value="campus recuriment training"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Student's Phone Number" max_length="40" name="u_student_phone_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Year of Completion" max_length="40" name="u_year_of_completion" type="string"/>
+    </element>
+</database>

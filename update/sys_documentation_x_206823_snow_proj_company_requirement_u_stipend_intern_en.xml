@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_stipend_intern" label="Stipend during internship" language="en" table="x_206823_snow_proj_company_requirement">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_stipend_intern</element>
+            <help/>
+            <hint/>
+            <label>Stipend during internship</label>
+            <language>en</language>
+            <name>x_206823_snow_proj_company_requirement</name>
+            <plural>Stipend during internships</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-09-10 15:50:57</sys_created_on>
+            <sys_id>d8dff0fddb7f3700492ff7af299619d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Stipend during internship</sys_name>
+            <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+            <sys_update_name>sys_documentation_x_206823_snow_proj_company_requirement_u_stipend_intern_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-09-10 15:50:57</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

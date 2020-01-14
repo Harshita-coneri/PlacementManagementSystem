@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>u_certificate_required</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>onloadcompany</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+	
+	var firstname=g_user.firstName;
+	var email=g_user.userName;                                                      
+	
+	g_form.setValue('u_com_name',firstname);
+	g_form.setValue('u_email',email);
+	
+	var user=g_user.userName;
+	
+		
+	var ga=new GlideAjax('companyautopopulate');//script include name
+	ga.addParam('sysparm_name','companyphone');//function
+	ga.addParam('xyz',user); 
+	ga.getXML(callBackFunction1);
+	
+	function callBackFunction1(response){
+	var y1 =response.responseXML.documentElement.getAttribute("answer");
+		g_form.addInfoMessage(y1);
+		 g_form.setValue('u_com_number',y1);
+	}	
+		 
+	var ga1=new GlideAjax('companyautopopulate');//script include name
+	ga1.addParam('sysparm_name','companyloc');//function
+	ga1.addParam('xyz',user); 
+	ga1.getXML(callBackFunction2);
+	
+	function callBackFunction2(response){
+	var y1 =response.responseXML.documentElement.getAttribute("answer");
+		g_form.addInfoMessage(y1);
+		 g_form.setValue('u_com_location',y1);
+	}
+		 
+	var ga2=new GlideAjax('companyautopopulate');//script include name
+	ga2.addParam('sysparm_name','companywebsite');//function
+	ga2.addParam('xyz',user); 
+	ga2.getXML(callBackFunction3);
+	
+	function callBackFunction3(response){
+	var y1 =response.responseXML.documentElement.getAttribute("answer");
+		g_form.addInfoMessage(y1);
+		 g_form.setValue('u_com_website',y1);
+	}
+	
+	var ga3=new GlideAjax('companyautopopulate');//script include name
+	ga3.addParam('sysparm_name','companyhrname');//function
+	ga3.addParam('xyz',user); 
+	ga3.getXML(callBackFunction4);
+	
+	function callBackFunction4(response){
+	var y1 =response.responseXML.documentElement.getAttribute("answer");
+		g_form.addInfoMessage(y1);
+		 g_form.setValue('u_hr_name',y1);
+	}
+	
+	var ga4=new GlideAjax('companyautopopulate');//script include name
+	ga4.addParam('sysparm_name','companyhremail');//function
+	ga4.addParam('xyz',user); 
+	ga4.getXML(callBackFunction5);
+	
+	function callBackFunction5(response){
+	var y1 =response.responseXML.documentElement.getAttribute("answer");
+		g_form.addInfoMessage(y1);
+		 g_form.setValue('u_hr_email',y1);
+	}
+	
+	var ga5=new GlideAjax('companyautopopulate');//script include name
+	ga5.addParam('sysparm_name','companyhrcontact');//function
+	ga5.addParam('xyz',user); 
+	ga5.getXML(callBackFunction6);
+	
+	function callBackFunction6(response){
+	var y1 =response.responseXML.documentElement.getAttribute("answer");
+		g_form.addInfoMessage(y1);
+		 g_form.setValue('u_hr_number',y1);
+	}
+	
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-10 17:29:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4c71ddb5dbff3700492ff7af29961967</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>onloadcompany</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>sys_script_client_4c71ddb5dbff3700492ff7af29961967</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-10 18:41:26</sys_updated_on>
+        <table>x_206823_snow_proj_company_requirement</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

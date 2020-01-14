@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>oauth2</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+  "summary": "Bebo birthday buddy",&#13;
+  "location": "India, Andhra Pradesh, Vijayawada, Nidamanuru",&#13;
+  "description": "We have organised a party for bebo birthday.",&#13;
+  "start": {&#13;
+    "dateTime": "2019-11-22T10:00:00-07:00",&#13;
+    "timeZone": "America/Los_Angeles"&#13;
+  },&#13;
+  "end": {&#13;
+    "dateTime": "2019-11-22T11:00:00-07:00",&#13;
+    "timeZone": "America/Los_Angeles"&#13;
+  },&#13;
+  &#13;
+  "attendees": [&#13;
+    {"email": "chandu1207@gmail.com"},&#13;
+    {"email": "chandu1207@kluniversity.in"}&#13;
+  ],&#13;
+  "reminders": {&#13;
+    "useDefault": false,&#13;
+    "overrides": [&#13;
+    &#13;
+      {"method": "popup", "minutes": 10}&#13;
+    ]&#13;
+  }&#13;
+}</content>
+        <function_name>Create Event</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile display_value="Google Client default_profile">fabec7a8db9d4010492ff7af299619cf</oauth2_profile>
+        <protocol_name/>
+        <qualified_name>Google Outbound Request [ Create Event ]</qualified_name>
+        <rest_endpoint>https://www.googleapis.com/calendar/v3/calendars/primary/events</rest_endpoint>
+        <rest_message display_value="Google Outbound Request">06eec72cdb9d4010492ff7af29961969</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-20 18:39:22</sys_created_on>
+        <sys_id>af3f0fe8db9d4010492ff7af29961903</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Create Event</sys_name>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>sys_rest_message_fn_af3f0fe8db9d4010492ff7af29961903</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-20 18:56:07</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

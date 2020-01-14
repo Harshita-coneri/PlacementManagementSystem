@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>u_no_interns</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>internshiphide</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+	   g_form.setDisplay('u_intern_1_tittle',false);
+	   g_form.setDisplay('u_intern_1_description',false);
+	   g_form.setDisplay('u_intern_1_com_name',false);
+	   g_form.setDisplay('u_intern_1_com_address',false);
+	   g_form.setDisplay('u_intern_2_tittle',false);
+	   g_form.setDisplay('u_intern_2_description',false);
+	   g_form.setDisplay('u_intern_2_com_name',false);
+	   g_form.setDisplay('u_intern_2_com_address',false);
+	   g_form.setDisplay('u_intern_3_tittle',false);
+	   g_form.setDisplay('u_intern_3_description',false);
+	   g_form.setDisplay('u_intern_3_com_name',false);
+	   g_form.setDisplay('u_intern_3_com_address',false);
+          return;
+   }
+switch(newValue){
+	case '0':
+	   g_form.setDisplay('u_intern_1_tittle',false);
+	   g_form.setDisplay('u_intern_1_description',false);
+	   g_form.setDisplay('u_intern_1_com_name',false);
+	   g_form.setDisplay('u_intern_1_com_address',false);
+	   g_form.setDisplay('u_intern_2_tittle',false);
+	   g_form.setDisplay('u_intern_2_description',false);
+	   g_form.setDisplay('u_intern_2_com_name',false);
+	   g_form.setDisplay('u_intern_2_com_address',false);
+	   g_form.setDisplay('u_intern_3_tittle',false);
+	   g_form.setDisplay('u_intern_3_description',false);
+	   g_form.setDisplay('u_intern_3_com_name',false);
+	   g_form.setDisplay('u_intern_3_com_address',false);
+		break;
+	case '1':
+	   g_form.setDisplay('u_intern_1_tittle',true);
+	   g_form.setDisplay('u_intern_1_description',true);
+	   g_form.setDisplay('u_intern_1_com_name',true);
+	   g_form.setDisplay('u_intern_1_com_address',true);
+	   g_form.setDisplay('u_intern_2_tittle',false);
+	   g_form.setDisplay('u_intern_2_description',false);
+	   g_form.setDisplay('u_intern_2_com_name',false);
+	   g_form.setDisplay('u_intern_2_com_address',false);
+	   g_form.setDisplay('u_intern_3_tittle',false);
+	   g_form.setDisplay('u_intern_3_description',false);
+	   g_form.setDisplay('u_intern_3_com_name',false);
+	   g_form.setDisplay('u_intern_3_com_address',false);
+		break;
+	case '2':
+	   g_form.setDisplay('u_intern_1_tittle',true);
+	   g_form.setDisplay('u_intern_1_description',true);
+	   g_form.setDisplay('u_intern_1_com_name',true);
+	   g_form.setDisplay('u_intern_1_com_address',true);
+	   g_form.setDisplay('u_intern_2_tittle',true);
+	   g_form.setDisplay('u_intern_2_description',true);
+	   g_form.setDisplay('u_intern_2_com_name',true);
+	   g_form.setDisplay('u_intern_2_com_address',true);
+	   g_form.setDisplay('u_intern_3_tittle',false);
+	   g_form.setDisplay('u_intern_3_description',false);
+	   g_form.setDisplay('u_intern_3_com_name',false);
+	   g_form.setDisplay('u_intern_3_com_address',false);
+		break;
+	case '3':
+	   g_form.setDisplay('u_intern_1_tittle',true);
+	   g_form.setDisplay('u_intern_1_description',true);
+	   g_form.setDisplay('u_intern_1_com_name',true);
+	   g_form.setDisplay('u_intern_1_com_address',true);
+	   g_form.setDisplay('u_intern_2_tittle',true);
+	   g_form.setDisplay('u_intern_2_description',true);
+	   g_form.setDisplay('u_intern_2_com_name',true);
+	   g_form.setDisplay('u_intern_2_com_address',true);
+	   g_form.setDisplay('u_intern_3_tittle',true);
+	   g_form.setDisplay('u_intern_3_description',true);
+	   g_form.setDisplay('u_intern_3_com_name',true);
+	   g_form.setDisplay('u_intern_3_com_address',true);
+		break;
+	
+	
+			
+}
+
+   //Type appropriate comment here, and begin script below
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-29 20:24:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8699c40adb2b3300492ff7af2996191f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>internshiphide</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>sys_script_client_8699c40adb2b3300492ff7af2996191f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-29 20:26:05</sys_updated_on>
+        <table>x_206823_snow_proj_student_detalis</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone">
+    <sp_rel_widget_clone action="INSERT_OR_UPDATE">
+        <child display_value="myform">db870486db2b3300492ff7af299619f0</child>
+        <cloned>2019-08-29 20:07:54</cloned>
+        <last_validated>2019-08-29 20:07:54</last_validated>
+        <parent display_value="Form">fd1f4ec347730200ba13a5554ee490c0</parent>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;sp_platform&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($rootScope, $scope, $timeout, $location, $log, $window, spUtil, nowAttachmentHandler, spAriaUtil, spNavStateManager) {
+  $scope.submitting = false;
+  $scope.mandatory = [];
+  $scope.errorMessages = [];
+  $scope.data.show_sql = false;
+  $scope.saveButtonSuffix = spUtil.getAccelerator('s');
+	$scope.isPageReady = false;
+  $scope.adminMenu = {
+    encodedPageUrl: encodeURIComponent($location.url()),
+    getClientScriptCount: function() {
+      var count = 0;
+      if ($scope.data.f.client_script) {
+        count += $scope.data.f.client_script.onChange.length;
+        count += $scope.data.f.client_script.onLoad.length;
+        count += $scope.data.f.client_script.onSubmit.length;
+      }
+      return count;
+    }
+  };
+
+  $rootScope.$on('$sp.html.editor.progress', function(e, conf) {
+      $scope.submitting = conf.state;
+  });
+
+  $scope.getButtonClass = function(action) {
+		if (action.form_style == "destructive")
+			return "btn-danger";
+		
+		if (action.form_style == "primary")
+			return "btn-primary";
+		
+		return "btn-default";
+	};
+	
+  $scope.getUIActions = function(type) {
+    if ($scope.data.disableUIActions)
+      return [];
+    if (type) {
+      return $scope.data.f._ui_actions.filter(function(action) {
+        //We handle the primary action button separately.
+        return !action.primary &amp;&amp; action['is_' + type];
+      });
+    } else {
+      return $scope.data.f._ui_actions;
+    }
+  }
+
+  $scope.getPrimaryAction = function() {
+    var primaryActions = $scope.data.f._ui_actions.filter(function(action) {
+      return action.primary;
+    });		
+    return (primaryActions.length) ? primaryActions[0] : null;
+  }
+
+  $scope.getUIActionContextMenu = function(event) {
+    var menu = [];
+    if (event.ctrlKey)
+      return menu;
+
+    var contextActions = $scope.getUIActions('context');
+    contextActions.forEach(function(action) {
+      menu.push([action.name, function() {
+        $scope.triggerUIAction(action);
+      }]);
+    });
+
+    if (contextActions.length &gt; 0)
+      menu.push(null);
+    menu.push([$scope.data.exportPDFMsg, function() {
+      exportPDF("");
+    }]);
+    menu.push([$scope.data.exportPDFLandMsg, function() {
+      exportPDF('true');
+    }]);
+
+    return menu;
+  }
+
+  function exportPDF(landscape) {
+    $window.open("/" + $scope.data.f.table + ".do?PDF&amp;landscape=" + landscape + "&amp;sys_id=" + $scope.data.sys_id + "&amp;sysparm_view=" + $scope.data.f.view);
+  }
+
+  //trigger the primary UI Action on save (if there is one)
+  var deregister = $scope.$on('$sp.save', function() {
+    var primaryAction = $scope.getPrimaryAction();
+    if (primaryAction)
+      $scope.triggerUIAction(primaryAction);
+  });
+  $scope.$on('$destroy', function() {
+    deregister()
+  });
+
+  $scope.triggerUIAction = function(action) {
+		if ($scope.data.disableUIActions &amp;&amp; !action.primary) {
+      return;
+    }
+
+    var activeElement = document.activeElement;
+    if (activeElement) {
+      activeElement.blur();
+    }
+
+    $scope.$evalAsync(function() {
+      if (g_form) {
+        $scope.submitting = true;
+        if (!g_form.submit(action.action_name || action.sys_id))
+          $scope.submitting = false;
+      }
+    });
+  }
+
+  $scope.$on("spModel.uiActionComplete", function(evt, response) {
+    $scope.submitting = false;
+    var sysID = (response.isInsert) ? response.sys_id : $scope.data.sys_id;
+    loadForm($scope.data.table, sysID).then(constructResponseHandler(response));
+  });
+
+  function constructResponseHandler(response) {
+    return function() {
+	  $rootScope.$broadcast("sp.form.submitted", {sys_id: (response.isInsert) ? response.sys_id : $scope.data.sys_id});
+      var message;
+      var eventName = "sp.form.record.updated";
+      if (response.isInsert) {
+        message = $scope.data.recordAddedMsg;
+        var search = $location.search();
+        search.sys_id = response.sys_id;
+        search.spa = 1;
+        $location.search(search).replace();
+      } else
+        message = $scope.data.updatedMsg;
+
+      $scope.data.hideRelatedLists = hideRelatedLists();
+      $scope.$emit(eventName, $scope.data.f._fields);
+      $rootScope.$broadcast(eventName, $scope.data.f._fields);
+      $scope.status = message;
+      spUtil.addTrivialMessage(message);
+      $timeout(clearStatus, 2000);
+    }
+  }
+
+  var ctrl = this;
+  // switch forms
+  var unregister = $scope.$on('$sp.list.click', onListClick);
+  $scope.$on("$destroy", function() {
+    unregister();
+  })
+	
+	function _save() {
+		var primaryAction = $scope.getPrimaryAction();
+    if (primaryAction)
+      $scope.triggerUIAction(primaryAction);
+	}
+	
+	function onListClick(evt, arg) {
+		loadForm(arg.table, arg.sys_id);
+	}
+
+  function loadForm(table, sys_id) {
+    var f = {};
+    $scope.data.table = f.table = table;
+    $scope.data.sys_id = f.sys_id = sys_id;
+    f.view = $scope.data.view;
+    return $scope.server.update().then(setupAttachmentHandler);
+  }
+
+  function openRelatedList(e, queryString) {
+    // todo: Open this in a modal
+    $location.search(queryString);
+    e.preventDefault();
+  }
+
+  $scope.$on('spModel.fields.rendered', function() {
+    if (ctrl.panels)
+      ctrl.panels.removeClass('shift-out').addClass('shift-in');
+  });
+	
+	var g_form;
+	function initForm(gFormInstance) {
+		if (gFormInstance.getTableName() == $scope.data.f.table){
+			g_form = gFormInstance;
+			spNavStateManager.register($scope.data.table, _save, g_form);
+			$scope.isPageReady = true;
+			$timeout(function() {
+				$rootScope.$emit('spModel.gForm.rendered', g_form);
+			}, 175);
+		}
+	}
+	
+  $scope.$on('spModel.gForm.initialized', function(e, gFormInstance) {
+		initForm(gFormInstance);
+  });
+	
+	$scope.$on('spModel.gForm.env.created', function(e, gFormInstance) {
+		initForm(gFormInstance);
+  });
+	
+	// update the comments or worknotes based on activity stream
+	$scope.$on("activity_stream_is_changed", function(event, data) {
+		if (g_form &amp;&amp; g_form.hasField(data.fieldName)) {
+			g_form.setValue(data.fieldName, data.input);
+			if (data.fieldToClear != "" &amp;&amp; g_form.hasField(data.fieldToClear))
+				g_form.setValue(data.fieldToClear, "");
+		}
+	})
+
+  // Show or hide related lists
+  $scope.$watch('data.f._related_lists', function() {
+    $scope.data.hideRelatedLists = hideRelatedLists();
+  }, true);
+
+  function hideRelatedLists() {
+    if (!$scope.data.f._related_lists)
+      return true;
+
+    if ($scope.options.hideRelatedLists == true)
+      return true;
+
+    if ($scope.data.sys_id == '-1')
+      return true;
+
+    // If all related lists are visible=false then hide
+    if ($scope.data.f._related_lists.length &gt; 0) {
+      for (var i in $scope.data.f._related_lists) {
+        var list = $scope.data.f._related_lists[i];
+        if (list.visible) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  function clearStatus() {
+    $scope.status = "";
+  }
+
+  function setupAttachmentHandler() {
+    $scope.attachmentHandler = new nowAttachmentHandler(appendDone, appendError);
+
+		$scope.$evalAsync(function() {
+			$scope.attachmentHandler.setParams($scope.data.table, $scope.data.f._attachmentGUID, 1024 * 1024 * $scope.data.maxAttachmentSize);
+		});
+
+    $scope.$on('dialog.upload_too_large.show', function(e) {
+      $log.error($scope.data.largeAttachmentMsg);
+      spUtil.addErrorMessage($scope.data.largeAttachmentMsg);
+    });
+  }
+  setupAttachmentHandler();
+
+  function appendDone() {
+    // don't know here whether upload succeeded, so can't show msg either way
+    $scope.$broadcast("sp.attachments.update", $scope.data.f._attachmentGUID);
+    spAriaUtil.sendLiveMessage($scope.data.attachmentSuccessMsg);
+  }
+
+  function appendError(error) {
+    $scope.errorMessages.push(error);
+    spUtil.addErrorMessage(error.msg + error.fileName);
+  }
+
+  if ($scope.data.f.title) {
+	  $scope.$emit('sp.widget-modal.set-aria-label', $scope.data.f.title);
+  }
+}]]&gt;&lt;/client_script&gt;&lt;controller_as/&gt;&lt;css&gt;.btn-form-menu {
+	vertical-align: inherit;
+  padding: inherit;
+  background: none;
+}
+
+.panel-title {
+  word-wrap: break-word;
+}
+
+.panel-heading {
+  .dropdown-menu {
+    a {
+      white-space: normal;
+    }
+  }
+}
+
+.sc-field-error-label {
+  margin-right: .5em;
+  display: inline-block;
+  background-color: $sc-field-error-color;
+}
+
+.comment {
+	font-weight: bold;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+.mce-panel, .mce-btn {
+	background-image: none;
+	background-color: #f0f3f4;
+}
+
+.action-btn {
+  margin-right: 5px;
+}
+
+.timeline-container {
+   max-height: 50vh;
+   height: 100%;
+   overflow-y: auto;
+}
+
+.panel .panel {
+    height: auto !important;
+}
+
+.attachment-button {
+  .glyphicon-paperclip {
+    font-size: 18px;
+  }
+}
+
+.dropdown {
+  .glyphicon-menu-hamburger:focus {
+ 		outline: thin dotted;
+		outline: 5px auto $input-border-focus;
+		outline-offset: -2px; 
+	}
+}
+
+.empty-state-wrapper {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10vh 20px 20px;
+
+  .empty-state {
+    border: 1px solid #e7e9eb;
+    border-radius: 10px;
+    max-width: 700px;
+    padding: 30px 40px 20px;
+    position: relative;
+
+    .empty-state-badge {
+      top: -36px;
+      left: 50%;
+      position: absolute;
+      height: 72px;
+      width: 72px;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border-radius: 100%;
+      color: #ffffff;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 40px;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-left: -36px;
+      text-align: center;
+    }
+
+    .empty-state-header {
+      font-size: 30px;
+      text-align: center;
+      color: #343d47;
+    }
+
+    .empty-state-content {
+      ul {
+        list-style: disc outside;
+        margin: 0 0 10px 0;
+        padding: 0 0 0 30px;
+      }
+    }
+  }
+}
+
+.text-success-alt {
+	background-color: $state-success-text;
+}
+
+.text-info-alt {
+	background-color: $state-info-text;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;widget-form&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;Form&lt;/name&gt;&lt;option_schema&gt;[{"name":"disableUIActions","section":"Behavior","label":"Disable UI Actions on Form","type":"boolean"},{"name":"showFormView","section":"Behavior","label":"Display current form view","type":"boolean"},{"name":"omitHeaderOptions","section":"Behavior","label":"Omit header options icon","type":"boolean"}]&lt;/option_schema&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles&gt;snc_external,snc_internal&lt;/roles&gt;&lt;script&gt;&lt;![CDATA[// form functionality - URL parameter driven
+(function($sp, input, data, options, gs) {
+  /* "use strict"; -linter issues */
+  // populate the 'data' variable
+	data.attachmentUploadSuccessMsg = gs.getMessage("Attachment upload was successful");
+	data.recordAddedMsg = gs.getMessage("Record Added");
+	data.updatedMsg = gs.getMessage("updated_uppercase");
+	data.exportPDFMsg = gs.getMessage("Export to PDF");
+	data.exportPDFLandMsg = gs.getMessage("Export to PDF (landscape)");
+	data.addAttachmentMsg = gs.getMessage("Add an attachment");
+	data.maxAttachmentSize = parseInt(gs.getProperty("com.glide.attachment.max_size", 1024));
+	if (isNaN(data.maxAttachmentSize))
+		data.maxAttachmentSize = 24;
+	data.largeAttachmentMsg = gs.getMessage("Attached files must be smaller than {0} - please try again", "" + data.maxAttachmentSize + "MB");
+	data.attachmentSuccessMsg = gs.getMessage("Attachment successfully uploaded");
+	
+	data.isAdmin = gs.hasRightsTo('sp/configure.all/execute', null);
+	data.emptyStateTemplate = options.empty_state_template;
+	data.disableUIActions = options.disableUIActions === "true";
+	data.hideRelatedLists = options.hideRelatedLists || false;
+
+	if (input) {
+		data.table = input.table;
+		data.sys_id = input.sys_id;
+		data.view = input.view;
+		var result = {};
+		if (input._fields) {
+			result = $sp.saveRecord(input.table, input.sys_id, input._fields);
+			data.sys_id = result.sys_id;
+		}
+
+		if (input.sys_id == '-1')
+			data.isNewRecord = true;
+	} else {
+		data.table = options.table || $sp.getParameter("t") || $sp.getParameter("table") || $sp.getParameter("sl_table");
+		data.sys_id = options.sys_id || $sp.getParameter("sys_id") || $sp.getParameter("sl_sys_id") || "-1";
+		data.view = options.view || $sp.getParameter("view") || $sp.getParameter("v"); // no default
+	}
+
+	data.query = $sp.getParameter("query") || options.query || "";
+	data.f = {};
+	if (!data.table)
+		return;
+	
+	// Form widget is not a supported way to view an attachment
+	if (data.table == "sys_attachment") {
+		data.tableUnsupported = true;
+		return;
+	}
+
+	if (!GlideTableDescriptor.isValid(data.table))
+		return;
+
+	if (!data.sys_id)
+		return;
+
+	var rec = $sp.getRecord(data.table, data.sys_id);
+	data.isValid = rec.isValid() || data.sys_id == "-1";
+	if (!data.isValid)
+		return;
+
+	data.table = rec.getRecordClassName();
+	data.tableHierarchy = GlideDBObjectManager.getTables(data.table).toArray().join();
+	data.canWrite = rec.canWrite();
+	var hasRecordAccess = data.sys_id == "-1" ? rec.canCreate() : data.canWrite;
+	data.canAttach = hasRecordAccess &amp;&amp; gs.hasRole(gs.getProperty('glide.attachment.role')) &amp;&amp; !GlideTableDescriptor.get(data.table).getED().getBooleanAttribute("no_attachment");
+	data.f = $sp.getForm(data.table, data.sys_id, data.query, data.view);
+
+	// Activity formatter is hardcoded to set specific options
+	for (var f in data.f._formatters) {
+		var fm = data.f._formatters[f];
+		if (fm.formatter == "activity.xml") {
+			fm.hardcoded = true;
+			fm.widgetInstance = $sp.getWidget('widget-ticket-conversation',
+																{table: data.table,
+																 sys_id: data.sys_id,
+																 includeExtended: true,
+																 hideAttachmentBtn: true,
+																 title: "${Activity}",
+																 use_dynamic_placeholder: true,
+																 btnLabel: "${Post}"});
+		} else if(fm.formatter == "com_glideapp_servicecatalog_veditor" || fm.formatter == "com_glideapp_questionset_default_question_editor") {
+			var qsConfig = $sp.getValue('quick_start_config');
+			if (qsConfig)
+				qsConfig = JSON.parse(qsConfig)[0];
+			fm.widgetInstance = $sp.getWidget(fm.widget, {table: data.table,
+														sys_id: data.sys_id,
+														readonly_variable_editor: qsConfig ? qsConfig.readonly_variable_editor : 'false'});
+		} else
+			fm.widgetInstance = $sp.getWidget(fm.widget, data);
+	}
+})($sp, input, data, options, gs);]]&gt;&lt;/script&gt;&lt;servicenow&gt;true&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-11-22 21:32:20&lt;/sys_created_on&gt;&lt;sys_id&gt;fd1f4ec347730200ba13a5554ee490c0&lt;/sys_id&gt;&lt;sys_mod_count&gt;965&lt;/sys_mod_count&gt;&lt;sys_name&gt;Form&lt;/sys_name&gt;&lt;sys_package display_value="Service Portal - Core" source="com.glide.service-portal"&gt;f66ddd7c74e0330078509adcc48c87da&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_fd1f4ec347730200ba13a5554ee490c0&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2018-04-09 18:17:45&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div ng-if="::!data.isValid &amp;&amp; !data.emptyStateTemplate" class="panel panel-default"&gt;
+  &lt;div class="panel-body wrapper-lg text-center"&gt;
+    &lt;span ng-if="!data.tableUnsupported"&gt;${Record not found}&lt;/span&gt;
+    &lt;span ng-if="data.tableUnsupported"&gt;${Form view not supported for requested table}&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div ng-if="!data.isValid &amp;&amp; data.emptyStateTemplate" class="panel-shift"&gt;
+  &lt;div class="empty-state-wrapper panel panel-default" ng-include="data.emptyStateTemplate"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div ng-if="data.isValid" class="panel-shift"&gt;
+  &lt;div class="" ng-if="!data.f._view.length &amp;&amp; data.hideRelatedLists &amp;&amp; data.emptyStateTemplate"&gt;
+    &lt;div class="empty-state-wrapper panel panel-default" ng-include="data.emptyStateTemplate"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="" ng-if="!data.f._view.length &amp;&amp; data.hideRelatedLists &amp;&amp; !data.emptyStateTemplate"&gt;
+    &lt;div class="panel panel-default"&gt;
+      &lt;div class="panel-heading"&gt;&lt;span class="panel-title"&gt;{{data.f.title}}&lt;/span&gt; &lt;span ng-if="::options.showFormView == 'true' &amp;&amp; data.f.view != ''"&gt;[{{data.f.view_title}} view]&lt;/span&gt;&lt;/div&gt;
+      &lt;div class="panel-body wrapper-lg text-center"&gt;
+        ${No elements to display}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div ng-show="isPageReady" class="panel panel-default" ng-if="::data.f._view.length || !data.hideRelatedLists" &gt;
+    &lt;div class="panel-heading" ng-if="data.f.title.length" sp-context-menu="getUIActionContextMenu(event)"&gt;
+      	&lt;span class="dropdown m-r-xs" ng-if="(data.isAdmin || getUIActions('context').length &gt; 0) &amp;&amp; options.omitHeaderOptions != 'true'"&gt;
+            &lt;button aria-label="${Form menu}" class="btn btn-form-menu dropdown-toggle glyphicon glyphicon-menu-hamburger" style="line-height: 1.4em" id="adminMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;&lt;/button&gt;
+            &lt;ul class="dropdown-menu" aria-labelledby="adminMenu"&gt;
+              &lt;li ng-if="::data.isAdmin"&gt;&lt;a ng-href="/{{::data.f.table}}.do?sys_id={{data.f.sys_id}}&amp;sysparm_view={{data.f.view}}" target="_blank"&gt;${Open in platform}&lt;/a&gt;&lt;/li&gt;
+              &lt;li ng-if="::data.isAdmin" class="dropdown-header"&gt;${Configure}&lt;/li&gt;
+              &lt;li ng-if="::data.isAdmin"&gt;&lt;a href="/slushbucket.do?sysparm_referring_url={{adminMenu.encodedPageUrl}}&amp;sysparm_list={{data.f._sections[0].id}}&amp;sysparm_form=section&amp;sysparm_view={{data.f.view}}" target="_blank"&gt;${Form Layout}&lt;/a&gt;&lt;/li&gt;
+              &lt;li ng-if="::data.isAdmin"&gt;&lt;a href="/slushbucket.do?sysparm_referring_url={{adminMenu.encodedPageUrl}}&amp;sysparm_list={{data.f.table}}&amp;sysparm_form=related_list&amp;sysparm_view={{data.f.view}}" target="_blank"&gt;${Related Lists}&lt;/a&gt;&lt;/li&gt;
+              &lt;li ng-if="::data.isAdmin"&gt;&lt;a href="?id=lf&amp;table=sys_ui_policy&amp;filter=table%3D{{data.f.table}}%5EORtableIN{{data.tableHierarchy}}%5Eactive%3Dtrue%5Eui_type%3D1%5EORui_type%3D10" ng-click="openRelatedList($event, {id:'lf', table: 'sys_ui_policy', filter: 'table%3D{{data.f.table}}%5EORtableIN{{data.f.table}},sys_metadata%5Eactive%3Dtrue%5Eui_type%3D1%5EORui_type%3D10'})"&gt;${UI Policies} &lt;span class="badge pull-right" ng-if="f.policy.length"&gt;{{f.policy.length}}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li ng-if="::data.isAdmin"&gt;&lt;a href="?id=lf&amp;table=sys_script_client&amp;filter=table%3D{{data.f.table}}%5EORtableIN{{data.tableHierarchy}}%5Eactive%3Dtrue%5Eui_type%3D1%5EORui_type%3D10" ng-click="openRelatedList($event, {id: 'lf', table: 'sys_script_client', filter: 'table%3D{{data.f.table}}%5EORtableIN{{data.f.table}},sys_metadata%5Eactive%3Dtrue%5Eui_type%3D1%5EORui_type%3D10'})"&gt;${Client Scripts} &lt;span class="badge pull-right" ng-if="adminMenu.getClientScriptCount()"&gt;{{adminMenu.getClientScriptCount()}}&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li ng-if="getUIActions('context').length &gt; 0 &amp;&amp;  data.isAdmin" role="separator" class="divider"&gt;&lt;/li&gt;
+              &lt;li ng-repeat="action in getUIActions('context')"&gt;&lt;a href="" ng-click="triggerUIAction(action)"&gt;{{action.name}}&lt;/a&gt;&lt;/li&gt;
+              &lt;li ng-if="::data.isAdmin || getUIActions('context').length &gt; 0" role="separator" class="divider"&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a target="_new" href="/{{data.f.table}}.do?PDF&amp;sys_id={{data.sys_id}}&amp;sysparm_view={{data.f.view}}"&gt;${Export to PDF}&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a target="_new" href="/{{data.f.table}}.do?PDF&amp;landscape=true&amp;sys_id={{data.sys_id}}&amp;sysparm_view={{data.f.view}}"&gt;${Export to PDF (landscape)}&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;span class="panel-title" aria-label="{{data.f.title}}"&gt;{{data.f.title}}&lt;/span&gt; &lt;span ng-if="::options.showFormView == 'true' &amp;&amp; data.f.view != ''"&gt;[{{data.f.view_title}} view]&lt;/span&gt;
+      &lt;div ng-if="::attachmentHandler &amp;&amp; data.canAttach" title="{{::data.addAttachmentMsg}}" class="pull-right attachment-button"&gt;
+      	&lt;sp-attachment-button&gt;&lt;/sp-attachment-button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="panel-body"&gt;
+      &lt;!-- performance debug --&gt;
+      &lt;div ng-if="data.show_sql"&gt;
+        &lt;div class="comment"&gt;
+          &lt;span ng-if="data.f._perf.sql_count"&gt;${SQL Statements {{data.f._perf.sql_count}}}, &lt;/span&gt;
+          &lt;span&gt;${Time {{data.f._perf.time}}}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div ng-repeat="s in data.f._perf.sql" class="{{s.type}}"&gt;
+          {{s.statement}}
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- attachments --&gt;
+      &lt;sp-attachment-manager table="::data.table" sys-id="data.f._attachmentGUID" omit-edit="::!data.canAttach"&gt;&lt;/sp-attachment-manager&gt;
+      &lt;!-- form --&gt;
+      &lt;div&gt;
+        &lt;sp-model form_model="data.f" mandatory="mandatory"&gt;&lt;/sp-model&gt;
+      &lt;/div&gt;
+      &lt;!-- UI Action Links --&gt;
+      &lt;div ng-if="getUIActions('link').length &gt; 0"&gt;
+        &lt;label style="margin: 0;"&gt;${Related Links}&lt;/label&gt;
+        &lt;div ng-repeat="action in getUIActions('link')"&gt;
+          &lt;a href ng-click="triggerUIAction(action)" gsft_id="{{::action.sys_id}}"&gt;{{::action.name}}&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- related lists --&gt;
+      &lt;div ng-if="!data.hideRelatedLists"&gt;
+        &lt;label style="margin: 0"&gt;${Related Lists}&lt;/label&gt;
+        &lt;div style="margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid #f5f5f5;"&gt;
+          &lt;span ng-repeat="rl in data.f._related_lists" ng-if="rl.visible"&gt;
+            &lt;a ng-if="rl.type != 'REL'" ng-href="?id=lf&amp;table={{::rl.table}}&amp;filter={{rl.field}}%3D{{data.f.sys_id}}&amp;view={{data.f.view}}" ng-click="openRelatedList($event, {id: 'lf', table: '{{::rl.table}}', filter: '{{rl.field}}%3D{{data.f.sys_id}}'})"&gt;{{rl.plural}}
+              &lt;span class="label label-as-badge label-primary" ng-if="rl.count"&gt;{{::rl.count}}&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a ng-if="::rl.type == 'REL'" href="?id=lf&amp;table={{::rl.table}}&amp;relationship_id={{rl.relationship_id}}&amp;apply_to={{rl.apply_to}}&amp;apply_to_sys_id={{rl.apply_to_sys_id}}&amp;view={{::data.f.view}}" ng-click="openRelatedList($event, {id: 'lf', table: '{{::rl.table}}', apply_to: '{{rl.apply_to}}', apply_to_sys_id: '{{rl.apply_to_sys_id}}', relationship_id: '{{rl.relationship_id}}'})"&gt;{{rl.label}}
+              &lt;span class="label label-as-badge label-primary" ng-if="rl.count"&gt;{{rl.count}}&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;span ng-if="!$last" style="padding-left: .5em; padding-right: .5em;" aria-hidden="true"&gt; | &lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="panel-footer"&gt;
+      &lt;button ng-click="triggerUIAction(action)" ng-disabled="submitting" ng-repeat="action in getUIActions('button')" class="btn action-btn" ng-class="::getButtonClass(action)" gsft_id="{{::action.sys_id}}"&gt;{{action.name}}&lt;/button&gt;
+      &lt;span&gt;{{status}}&lt;/span&gt;
+      &lt;button ng-if="getPrimaryAction()" type="submit" ng-click="triggerUIAction(getPrimaryAction())" ng-disabled="submitting" class="btn btn-primary action-btn pull-right" gsft_id="{{::getPrimaryAction().sys_id ? getPrimaryAction().sys_id : ''}}"&gt;${Save} &lt;span ng-if="saveButtonSuffix"&gt;(${{{saveButtonSuffix}}})&lt;/span&gt;&lt;/button&gt;
+      &lt;div style="clear: both;"&gt;&lt;/div&gt;
+      &lt;div ng-if="mandatory.length" class="alert alert-info" style="margin-top: .5em" aria-live="polite" aria-atomic="true"&gt;
+        &lt;span ng-if="mandatory.length &gt; 0"&gt;${Required information} &lt;/span&gt;
+        &lt;span ng-repeat="f in mandatory" class="label sc-field-error-label" ng-bind="f.label"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload>
+        <sys_class_name>sp_rel_widget_clone</sys_class_name>
+        <sys_created_by>cse</sys_created_by>
+        <sys_created_on>2019-08-29 20:07:54</sys_created_on>
+        <sys_id>5b870486db2b3300492ff7af299619f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>db870486db2b3300492ff7af299619f0</sys_name>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>sp_rel_widget_clone_5b870486db2b3300492ff7af299619f5</sys_update_name>
+        <sys_updated_by>cse</sys_updated_by>
+        <sys_updated_on>2019-08-29 20:07:54</sys_updated_on>
+    </sp_rel_widget_clone>
+</record_update>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>info</color>
+        <css/>
+        <display_field/>
+        <field_list>first_name,last_name,u_dept,u_id_number,email,u_dob,sys_created_on</field_list>
+        <filter table="user_registration_request">u_dept=javascript:gs.getUserName()
+^state=pending<item endquery="false" field="u_dept" goto="false" newquery="false" operator="=" or="false" value="javascript:gs.getUserName()&#10;"/>
+            <item endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="pending"/>
+        </filter>
+        <glyph>check</glyph>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by>sys_created_on</order_by>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">6374fbb5dbe73300492ff7af29961933</sp_column>
+        <sp_page/>
+        <sp_widget display_value="mytable">f4443f35dbe73300492ff7af299619c6</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-29 19:19:14</sys_created_on>
+        <sys_id>da6cff7ddbe73300492ff7af299619d3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>MY PENDING REQUESTS</sys_name>
+        <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+        <sys_update_name>sp_instance_table_da6cff7ddbe73300492ff7af299619d3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-29 19:21:58</sys_updated_on>
+        <table>user_registration_request</table>
+        <title>MY PENDING REQUESTS</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="delete_multiple" query="documentkey=da6cff7ddbe73300492ff7af299619d3"/>
+</record_update>

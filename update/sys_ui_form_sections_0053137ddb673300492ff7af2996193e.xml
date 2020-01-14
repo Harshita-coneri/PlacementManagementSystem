@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="0053137ddb673300492ff7af2996193e" sys_domain="global" table="x_206823_snow_proj_student_detalis" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:19:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8053137ddb673300492ff7af29961941</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_206823_snow_proj_student_detalis" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">0053137ddb673300492ff7af2996193e</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">e7a017b9db673300492ff7af29961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:19:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:19:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8c53137ddb673300492ff7af29961941</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_206823_snow_proj_student_detalis" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">0053137ddb673300492ff7af2996193e</sys_ui_form>
+            <sys_ui_section caption="Education Detalis" display_value="Education Detalis" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:19:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:19:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c453137ddb673300492ff7af29961945</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_206823_snow_proj_student_detalis" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">0053137ddb673300492ff7af2996193e</sys_ui_form>
+            <sys_ui_section caption="Technical Details" display_value="Technical Details" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c853137ddb673300492ff7af2996193b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:19:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:19:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4c53137ddb673300492ff7af29961961</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_206823_snow_proj_student_detalis" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">0053137ddb673300492ff7af2996193e</sys_ui_form>
+            <sys_ui_section caption="Internships" display_value="Internships" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:19:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:19:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c853137ddb673300492ff7af29961965</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_206823_snow_proj_student_detalis" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">0053137ddb673300492ff7af2996193e</sys_ui_form>
+            <sys_ui_section caption="Projects" display_value="Projects" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c853137ddb673300492ff7af2996193c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:19:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:19:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>cc53137ddb673300492ff7af29961969</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_206823_snow_proj_student_detalis" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">0053137ddb673300492ff7af2996193e</sys_ui_form>
+            <sys_ui_section caption="Profile" display_value="Profile" name="x_206823_snow_proj_student_detalis" sys_domain="global" view="Default view">c053137ddb673300492ff7af2996193d</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:19:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_206823_snow_proj_student_detalis</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-08-29 16:19:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>0053137ddb673300492ff7af2996193e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_206823_snow_proj_student_detalis</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Snow project" source="x_206823_snow_proj">040f4b31db273300492ff7af2996192c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow project">040f4b31db273300492ff7af2996192c</sys_scope>
+            <sys_update_name>sys_ui_form_sections_0053137ddb673300492ff7af2996193e</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-08-29 16:19:40</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>
